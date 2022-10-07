@@ -144,6 +144,14 @@
         "copy ./inventory-cfengine-version-support-status.cf services/cfengine-supported/",
         "json ./cfbs/def.json def.json"
       ]
+    },
+    {
+      "name": "./test.cf",
+      "description": "Local policy file added using cfbs command line",
+      "tags": ["local"],
+      "dependencies": ["autorun"],
+      "added_by": "cfbs add",
+      "steps": ["copy ./test.cf services/autorun/test.cf"]
     }
   ],
   "git": true
