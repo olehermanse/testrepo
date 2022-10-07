@@ -28,6 +28,33 @@
         "copy ./policy/main.cf services/inventory-sudoers/main.cf",
         "json ./cfbs/def.json def.json"
       ]
+    },
+    {
+      "name": "autorun",
+      "description": "Enable autorun functionality",
+      "tags": ["supported", "management"],
+      "repo": "https://github.com/cfengine/modules",
+      "by": "https://github.com/olehermanse",
+      "version": "1.0.1",
+      "commit": "c3b7329b240cf7ad062a0a64ee8b607af2cb912a",
+      "subdirectory": "management/autorun",
+      "added_by": "telnet-server-not-installed",
+      "steps": ["json def.json def.json"]
+    },
+    {
+      "name": "telnet-server-not-installed",
+      "version": "0.0.2",
+      "description": "This module ensures the telnet server package is not installed on the system",
+      "tags": ["supported", "security", "compliance"],
+      "repo": "https://github.com/vpodzime/cfengine-security-hardening",
+      "by": "https://github.com/vpodzime",
+      "commit": "2092c748f5c1a6e3b5b1aeacd486fa38ba862226",
+      "subdirectory": "telnet-server-not-installed",
+      "dependencies": ["autorun"],
+      "added_by": "cfbs add",
+      "steps": [
+        "copy ./telnet_server_policy.cf services/autorun/telnet_server_policy.cf"
+      ]
     }
   ],
   "git": true
