@@ -83,6 +83,21 @@
       "steps": [
         "copy ./os-is-vendor-supported.json .no-distrib/compliance-report-definitions/os-is-vendor-supported.json"
       ]
+    },
+    {
+      "name": "openldap-server-not-installed",
+      "version": "0.0.1",
+      "description": "This module has a policy file which makes sure the openldap server package is not installed on the system",
+      "tags": ["security", "compliance", "experimental"],
+      "repo": "https://github.com/vpodzime/cfengine-security-hardening",
+      "by": "https://github.com/vpodzime",
+      "commit": "2092c748f5c1a6e3b5b1aeacd486fa38ba862226",
+      "subdirectory": "openldap-server-not-installed",
+      "dependencies": ["autorun"],
+      "added_by": "cfbs add",
+      "steps": [
+        "copy ./openldap_server_policy.cf services/autorun/openldap_server_policy.cf"
+      ]
     }
   ],
   "git": true
