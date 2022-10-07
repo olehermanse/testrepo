@@ -1,0 +1,7 @@
+{
+  "name": "testrepo@main",
+  "type": "policy-set",
+  "description": "Example description",
+  "build": [],
+  "git": true
+}
